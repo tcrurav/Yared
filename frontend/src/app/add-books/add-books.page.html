@@ -1,0 +1,56 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title size="large">add-books</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Input -->
+  <ion-list>
+    <ion-item>
+      <ion-label position="floating">Book name <ion-text color="danger">(Required)</ion-text></ion-label>
+      <ion-input placeholder="Enter book name" [(ngModel)]="title" name="title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Author name <ion-text color="danger">(Required)</ion-text></ion-label>
+      <ion-input placeholder="Enter author name"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <!-- Button -->
+  <ion-grid>
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col>
+        <ion-button expand="block" (click)="addBook()">Add book</ion-button>
+      </ion-col>
+      <ion-col></ion-col>   
+    </ion-row>
+  </ion-grid>
+
+  <!-- Footer -->
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="gotoHome" (click)="gotoHome()">
+        <ion-icon name="home"></ion-icon>
+        Go Home
+      </ion-tab-button>
+      <ion-tab-button tab="gotoMyBooks" (click)="gotoMyBooks()">
+        <ion-icon name="library"></ion-icon>
+        Book's List
+      </ion-tab-button>
+      <ion-tab-button tab="addBook" id="present-alert" (click)="gotoAddBooks()">
+        <ion-icon name="add-circle"></ion-icon>
+        Add
+      </ion-tab-button>
+      <ion-tab-button tab="gotoDeleteBooks" (click)="gotoDeleteBooks()">
+        <ion-icon name="ban"></ion-icon>
+        Delete
+      </ion-tab-button>
+      <ion-tab-button tab="gotoUpdateBooks" (click)="gotoUpdateBooks()">
+        <ion-icon name="repeat"></ion-icon>
+        Update
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-content>

@@ -1,0 +1,49 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>my-books</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let b of books">
+      <ion-label>
+        <h1>{{b.book}}</h1>
+        <p>{{b.autor}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <!--FOOTER-->
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="gotoHome" (click)="gotoHome()">
+      <ion-icon name="home"></ion-icon>
+      Go Home
+    </ion-tab-button>
+    <ion-tab-button tab="gotoMyBooks" id="present-alert" (click)="gotoMyBooks()">
+      <ion-icon name="library"></ion-icon>
+      <ion-alert
+          trigger="present-alert"
+          header="Alert"
+          message="You are already on this page!"
+          [buttons]="alertButtons"
+      ></ion-alert>
+      Book's List
+    </ion-tab-button>
+    <ion-tab-button tab="addBook" (click)="gotoAddBooks()">
+      <ion-icon name="add-circle"></ion-icon>
+      Add
+    </ion-tab-button>
+    <ion-tab-button tab="gotoDeleteBooks" (click)="gotoDeleteBooks()">
+      <ion-icon name="ban"></ion-icon>
+      Delete
+    </ion-tab-button>
+    <ion-tab-button tab="gotoUpdateBooks" (click)="gotoUpdateBooks()">
+      <ion-icon name="repeat"></ion-icon>
+      Update
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
+</ion-content>
+
+
